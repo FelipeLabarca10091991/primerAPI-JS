@@ -1,0 +1,19 @@
+{
+  "name": "primerapi-js",
+  "version": "1.0.0",
+  "description": "Consumo de API Rest con Javascript",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FelipeLabarca10091991/primerAPI-JS.git"
+  },
+  "author": "@felipeLabarca",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FelipeLabarca10091991/primerAPI-JS/issues"
+  },
+  "homepage": "https://github.com/FelipeLabarca10091991/primerAPI-JS#readme"
+}
