@@ -4,6 +4,7 @@ async function getTrendingMoviesPreview(){
     const data = await res.json();
 
     //results from json structure of api documentation
+    
     const movies = data.results;
     
     movies.forEach(movie => {
@@ -22,5 +23,3 @@ async function getTrendingMoviesPreview(){
 }
 
 getTrendingMoviesPreview();
-
-
