@@ -1,11 +1,17 @@
+const api = axios.create({
+    baseURL: 'https://api.themoviedb.org/3',
+    headers:{
+        'Content-Type': 'application/json;charset=utf-8',
+    },
+    params: {
+        'api_key': API_KEY,
+    },
+});
+
 async function getTrendingMoviesPreview(){
 
-    const res = await fetch('https://api.themoviedb.org/3/trending/movie/day?api_key='+API_KEY);
-    const data = await res.json();
-
-    //results from json structure of api documentation
-    
-    const movies = data.results;
+    const {data} = await api('trending/movie/day'); //data viene del objeto que crea axios, para traer unicamente la información bajo dicho campo.
+    const movies = data.results; //results from json structure of api documentation
     
     movies.forEach(movie => {
         //Selecciona el id trendingPreview y la clase trendingPreview-movieList
@@ -24,7 +30,7 @@ async function getTrendingMoviesPreview(){
         //Formato src viene desde la Api 
         movieImg.setAttribute('src', 'https://image.tmdb.org/t/p/w300'+ movie.poster_path);
 
-        
+
         movieContainer.appendChild(movieImg);
         trendingPreviewMoviesContainer.appendChild(movieContainer);
     });
@@ -32,12 +38,8 @@ async function getTrendingMoviesPreview(){
 
 async function getCategoriesPreview(){
 
-    const res = await fetch('https://api.themoviedb.org/3/genre/movie/list?api_key='+API_KEY);
-    const data = await res.json();
-
-    //results from json structure of api documentation
-    
-    const categories = data.genres;
+    const {data} = await api('genre/movie/list');
+    const categories = data.genres; //results from json structure of api documentation
     
     categories.forEach(category => {
         const previewCategoriesContainer = document.querySelector('#categoriesPreview .categoriesPreview-list')
@@ -46,7 +48,8 @@ async function getCategoriesPreview(){
 
         const categoryTitle = document.createElement('h3');
         categoryTitle.classList.add('category-title');
-        categoryTitle.setAttribute('id', 'category.name');
+        categoryTitle.setAttribute('id', 'id' + category.id);
+        
         
         const categoryTitleText = document.createTextNode(category.name);
         
