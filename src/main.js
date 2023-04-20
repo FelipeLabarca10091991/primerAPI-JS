@@ -15,7 +15,7 @@ async function getTrendingMoviesPreview(){
     
     movies.forEach(movie => {
         //Selecciona el id trendingPreview y la clase trendingPreview-movieList
-        const trendingPreviewMoviesContainer = document.querySelector('#trendingPreview .trendingPreview-movieList')
+        const trendingMoviesPreviewList = document.querySelector('#trendingPreview .trendingPreview-movieList')
         //crea dentro de dicha clase un div
         const movieContainer = document.createElement('div');
         //agrega la clase movie-container al div
@@ -32,7 +32,7 @@ async function getTrendingMoviesPreview(){
 
 
         movieContainer.appendChild(movieImg);
-        trendingPreviewMoviesContainer.appendChild(movieContainer);
+        trendingMoviesPreviewList.appendChild(movieContainer);
     });
 }
 
@@ -42,7 +42,7 @@ async function getCategoriesPreview(){
     const categories = data.genres; //results from json structure of api documentation
     
     categories.forEach(category => {
-        const previewCategoriesContainer = document.querySelector('#categoriesPreview .categoriesPreview-list')
+        const categoriesPreviewList = document.querySelector('#categoriesPreview .categoriesPreview-list')
         const categoryContainer = document.createElement('div');
         categoryContainer.classList.add('category-container');
 
@@ -55,13 +55,10 @@ async function getCategoriesPreview(){
         
         categoryTitle.appendChild(categoryTitleText);
         categoryContainer.appendChild(categoryTitle);
-        previewCategoriesContainer.appendChild(categoryContainer);
+        categoriesPreviewList.appendChild(categoryContainer);
 
     });
-
-    
 }
 
-getTrendingMoviesPreview();
-getCategoriesPreview();
+
 
