@@ -19,6 +19,19 @@ function navigator(){
 
 function homePage(){
     console.log('home!!'); 
+
+    headerSection.classList.remove('header-container--long');
+    headerSection.style.background = '';
+    arrowBtn.classList.add('inactive');
+    headerTitle.classList.remove('inactive');
+    headerCategoryTitle.classList.add('inactive');
+    searchForm.classList.remove('inactive');
+
+    trendingPreviewSection.classList.remove('inactive');
+    categoriesPreviewSection.classList.remove('inactive');
+    genericListSection.classList.add('inactive');
+    movieDetailSection.classList.add('inactive');
+
     getTrendingMoviesPreview();
     getCategoriesPreview();
 }

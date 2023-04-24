@@ -1,34 +1,29 @@
 //Hago un queryselector para manejar cada elemento del html
 
-//con esta funcion se evita poner queryselectors en cada línea
-function $ (id){
-    document.querySelector(id);
-}
-
 //Sections
-const headerSection = $('#header');
-const trendingPreviewSection = $('#trendingPreview');
-const categoriesPreviewSection = $('#categoriesPreview');
-const genericListSection = $('#genericList');
-const movieDetailSection = $('#movieDetail');
+const headerSection = document.querySelector('#header');
+const trendingPreviewSection = document.querySelector('#trendingPreview');
+const categoriesPreviewSection = document.querySelector('#categoriesPreview');
+const genericListSection = document.querySelector('#genericList');
+const movieDetailSection = document.querySelector('#movieDetail');
 
 //List y containers
-const searchForm = $('#searchForm');
-const trendingMoviesPreviewList = ('.trendingPreview-movieList');
-const categoriesPreviewList = ('.categoriesPreview-list');
-const movieDetailCategoriesList = ('#movieDetail .categories-list');
-const relatedMoviesContainer = ('.relatedMovies-scrollContaine')
+const searchForm = document.querySelector('#searchForm');
+const trendingMoviesPreviewList = document.querySelector('.trendingPreview-movieList');
+const categoriesPreviewList = document.querySelector('.categoriesPreview-list');
+const movieDetailCategoriesList = document.querySelector('#movieDetail .categories-list');
+const relatedMoviesContainer = document.querySelector('.relatedMovies-scrollContaine')
 
 // Elements
-const headerTitle = $('.header-title');
-const arrowBtn = $('.header-arrow');
-const headerCategoryTitle = $('.header-title--categoryView');
+const headerTitle = document.querySelector('.header-title');
+const arrowBtn = document.querySelector('.header-arrow');
+const headerCategoryTitle = document.querySelector('.header-title--categoryView');
 
-const searchFormInput = $('#searchForm input');
-const searchFormBtn = $('#searchBtn');
+const searchFormInput = document.querySelector('#searchForm input');
+const searchFormBtn = document.querySelector('#searchBtn');
 
-const trendingBtn = $('.trendingPreview-btn');
+const trendingBtn = document.querySelector('.trendingPreview-btn');
 
-const movieDetailTitle = $('.movieDetail-title');
-const movieDetailDescription = $('.movieDetail-description');
-const movieDetailScore = $('.movieDetail-score');
+const movieDetailTitle = document.querySelector('.movieDetail-title');
+const movieDetailDescription = document.querySelector('.movieDetail-description');
+const movieDetailScore = document.querySelector('.movieDetail-score');
