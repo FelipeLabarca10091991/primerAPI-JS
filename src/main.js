@@ -1,8 +1,5 @@
 const api = axios.create({
     baseURL: 'https://api.themoviedb.org/3',
-    headers:{
-        'Content-Type': 'application/json;charset=utf-8',
-    },
     params: {
         'api_key': API_KEY,
     },
@@ -14,21 +11,19 @@ async function getTrendingMoviesPreview(){
     const movies = data.results; //results from json structure of api documentation
     
     movies.forEach(movie => {
-        //Selecciona el id trendingPreview y la clase trendingPreview-movieList
-        const trendingMoviesPreviewList = document.querySelector('#trendingPreview .trendingPreview-movieList')
-        //crea dentro de dicha clase un div
-        const movieContainer = document.createElement('div');
-        //agrega la clase movie-container al div
-        movieContainer.classList.add('movie-container');
+        
+        const trendingMoviesPreviewList = document.querySelector('#trendingPreview .trendingPreview-movieList') //Selecciona el id trendingPreview y la clase trendingPreview-movieList
+        const movieContainer = document.createElement('div'); //crea dentro de dicha clase un div
+        movieContainer.classList.add('movie-container'); //agrega la clase movie-container al div
 
-        //Crea una etiqueta img
-        const movieImg = document.createElement('img');
-        //Añade la clase movie-img
-        movieImg.classList.add('movie-img');
-        //Añade atributos
-        movieImg.setAttribute('alt','movie.title');
-        //Formato src viene desde la Api 
-        movieImg.setAttribute('src', 'https://image.tmdb.org/t/p/w300'+ movie.poster_path);
+        
+        const movieImg = document.createElement('img');//Crea una etiqueta img
+        
+        movieImg.classList.add('movie-img');//Añade la clase movie-img
+        
+        movieImg.setAttribute('alt','movie.title');//Añade atributos
+        
+        movieImg.setAttribute('src', 'https://image.tmdb.org/t/p/w300'+ movie.poster_path);//Formato src viene desde la Api 
 
 
         movieContainer.appendChild(movieImg);
